@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For my Sunshine ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(to top right,#ff4d6d,#ff9aa2);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.card{
+    background: rgba(0,0,0,0.3);
+    padding:25px;
+    border-radius:20px;
+    width:90%;
+    max-width:380px;
+    text-align:center;
+}
+
+h1{font-size:26px;}
+p{font-size:17px; line-height:1.5;}
+
+button{
+    padding:12px 22px;
+    margin:10px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.primary{
+    background:white;
+    color:#ff4d6d;
+}
+
+.option{
+    background:#ffe3ea;
+    color:#ff2f5e;
+    width:100%;
+}
+
+.photo{
+    width:100%;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.hidden{display:none;}
+
+#no{
+    position:absolute;
+    background:#ffcccc;
+    color:black;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- STEP 1 -->
+<div id="step1">
+    <h1>hey baby❤️</h1>
+    <p>I made something special just for you 🥺</p>
+    <img src=""C:\Users\shiva\OneDrive\Desktop\vivek_proposal\images\Screenshot 2026-02-08 224148.png"" class="photo">
+    <button class="primary" onclick="goStep(2)">Start 💕</button>
+</div>
+
+<!-- STEP 2 -->
+<div id="step2" class="hidden">
+    <h1>A Small Game 😄</h1>
+    <p>Before we continue… you must answer correctly 😌</p>
+    <p><b>Question 1:</b><br>Who annoys you the MOST? 😏</p>
+    <button class="option" onclick="wrong()">Anyone else</button>
+    <button class="option" onclick="correct(3)">You 😅</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="hidden">
+    <p><b>Question 2:</b><br>Who makes your bad days better? 💖</p>
+    <button class="option" onclick="correct(4)">You ❤️</button>
+    <button class="option" onclick="wrong()">Luck</button>
+</div>
+
+<!-- STEP 4 -->
+<div id="step4" class="hidden">
+    <p><b>Final Question:</b><br>Who loves you endlessly? 🥹</p>
+    <button class="option" onclick="correct(5)">YOU 😭❤️</button>
+    <button class="option" onclick="wrong()">Google</button>
+</div>
+
+<!-- STEP 5 -->
+<div id="step5" class="hidden">
+    <h1>You passed 😎💖</h1>
+    <p>Now you deserve to see this…</p>
+    <img src="C:\Users\shiva\OneDrive\Desktop\vivek_proposal\images\Screenshot 2026-02-08 224245.png" class="photo">
+    <button class="primary" onclick="goStep(6)">Continue 💫</button>
+</div>
+
+<!-- STEP 6 -->
+<div id="step6" class="hidden">
+    <p>
+        From silly laughs to deep talks,  
+        from random fights to quiet comfort…  
+        you became my favorite part of life 🌸
+    </p>
+    <button class="primary" onclick="goStep(7)">One last thing 🥺</button>
+</div>
+
+<!-- STEP 7 PROPOSAL -->
+<div id="step7" class="hidden">
+    <h1>So my sunshine… 💍</h1>
+    <p>Will you be mine forever? ❤️</p>
+    <button class="primary" onclick="yes()">YES 😍</button>
+    <button id="no" onmouseover="moveNo()">NO 🙈</button>
+</div>
+
+<!-- FINAL -->
+<div id="final" class="hidden">
+    <h1>YAYYYY 😭💖</h1>
+    <img src="C:\Users\shiva\OneDrive\Desktop\vivek_proposal\images\Screenshot 2026-02-08 225959.png" class="photo">
+    <p>
+        I knew it 😚  
+        Thank you for choosing me,  
+        loving me, and being mine ❤️  
+        <br><br>
+        Forever starts now 💫
+    </p>
+</div>
+
+</div>
+
+<!-- MUSIC -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/GxldQ9eX2wo?autoplay=1&loop=1&playlist=GxldQ9eX2wo">
+</iframe>
+
+<script>
+function goStep(n){
+    document.querySelectorAll(".card > div").forEach(d=>d.classList.add("hidden"));
+    document.getElementById("step"+n)?.classList.remove("hidden");
+}
+
+function correct(n){
+    alert("Correct 😄💖");
+    goStep(n);
+}
+
+function wrong(){
+    alert("Wrong answer 😏 Try again!");
+}
+
+function moveNo(){
+    const no=document.getElementById("no");
+    const x=Math.random()*200;
+    const y=Math.random()*200;
+    no.style.transform=`translate(${x}px,${y}px)`;
+}
+
+function yes(){
+    document.querySelectorAll(".card > div").forEach(d=>d.classList.add("hidden"));
+    document.getElementById("final").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
